@@ -25,9 +25,14 @@ Set of codes related to evaluation of Senai segmentation tasks
 ```
 
 - `data` contains the dataset divided into test and train. inside the each folder add the .json file associated with labels
-- `models` contains the trained models
+
+- `models` contains the trained models. Download address:
+https://drive.google.com/drive/folders/1xh2msCHGk4DraHzJLYtzBNLOw6U_hc8F?usp=sharing
+
 - `results` storage the responses of inference tasks from image collected from frontend
+
 - `uploads` contains the image uploads from frontend
+
 - `training_workflows` storage the notebooks responsible by train the model (resnet101). 
    - It have used transfer learning based on mask_rcnn_coco.h5 (keras framework)
    - Batch size and epochs were 2 and 50 respectively
@@ -42,6 +47,7 @@ Set of codes related to evaluation of Senai segmentation tasks
         - Increase dataset (even though I have used data augmentation)
 
 - `app_anm.py` executes the animals detection application
+
 - `app_tags.py` executes the tags detection application
 
 ### Run using python
