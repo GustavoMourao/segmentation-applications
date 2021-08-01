@@ -37,7 +37,7 @@ Set of codes related to evaluation of Senai segmentation tasks
    - In both models the validation loss were higher than training loss: **overfit**
       - It should regulirize them
         - reduce the models size
-        - L1, L2 normalization
+        - L2 normalization (it has been implemented, however it would be interesting to change some parameters)
         - Droput
         - Increase dataset (even though I have used data augmentation)
 
