@@ -10,15 +10,13 @@ from pixellib.instance import custom_segmentation
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-# MODEL_PATH = 'models/mask_rcnn_model_buttsqr.h5'
-MODEL_PATH = 'models/mask_rcnn_model_tag.h5'
+MODEL_PATH = 'models/mask_rcnn_model_buttsqr.h5'
 
 # Load your own trained model
 segment_image = custom_segmentation()
 segment_image.inferConfig(
-    num_classes= 1,
-    # class_names= ["BG", "butterfly", "squirrel"]
-    class_names= ["BG", "tag"]
+    num_classes= 2,
+    class_names= ["BG", "butterfly", "squirrel"]
 )
 segment_image.load_model(MODEL_PATH)
 
