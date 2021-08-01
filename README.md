@@ -2,6 +2,26 @@
 Set of codes related to evaluation of Senai segmentation tasks
 
 ## Source structure
+```
+.
+├── data/
+│   ├── test/
+│   │   └── ...
+│   ├── train/
+│   │   └── ...
+├── models/
+│   └── ...
+└── results/
+    └── ...
+└── results/
+    └── ...
+└── uploads/
+    └── ...
+└── training_workflows
+    └── ...
+
+app.py
+```
 
 ### References:
 
