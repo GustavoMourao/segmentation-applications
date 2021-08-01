@@ -11,17 +11,59 @@ Set of codes related to evaluation of Senai segmentation tasks
 │   │   └── ...
 ├── models/
 │   └── ...
-└── results/
-    └── ...
-└── results/
-    └── ...
-└── uploads/
-    └── ...
-└── training_workflows
-    └── ...
-
-app.py
+├── results/
+│   └── ...
+├── results/
+│   └── ...
+├── uploads/
+│   └── ...
+├── training_workflows
+│   └── workflow_1.ipynb
+│   └── workflow_2.ipynb
+├── app_anm.py
+├── app_tags.py
 ```
+
+- `data` contains the dataset divided into test and train. inside the each folder add the .json file associated with labels
+- `models` contains the trained models
+- `results` storage the responses of inference tasks from image collected from frontend
+- `uploads` contains the image uploads from frontend
+- `training_workflows` storage the notebooks responsible by train the model (resnet101). 
+   - It have used transfer learning based on mask_rcnn_coco.h5 (keras framework)
+   - Batch size and epochs were 2 and 50 respectively
+   - For both workflows it were used data augmentation due the lack of dataset:
+      - pixellib.custom_train.train_model
+   - For those models it was used mAP metric (area under the precision-recall curve). The results were around 0.8.
+   - In both models the validation loss were higher than training loss: **overfit**
+      - It should regulirize them
+        - reduce the models size
+        - L1, L2 normalization
+        - Droput
+        - Increase dataset (even though I have used data augmentation)
+
+- `app_anm.py` executes the animals detection application
+- `app_tags.py` executes the tags detection application
+
+### Run using python
+
+```
+1. virtualenv venv
+2. source venv\bin\activate
+3. pip install -r requirements.txt
+
+4.1. python app_tags.py (for tag application)
+
+4.2. python app_anm.py (for animals application)
+```
+
+### Run using docker
+1. Build
+docker build -t app_tags .
+
+3. Run
+docker run -it --rm -p 5002:5002 app_tags
+
+To run the animals detection application edit Docker configuration by adding into `CMD [ "python" , "app_tags.py"]` the script `app_anm.py`.
 
 ### References:
 
