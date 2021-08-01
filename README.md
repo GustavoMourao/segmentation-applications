@@ -1,5 +1,5 @@
-# evaluation-senai
-Set of codes related to Senai evaluation
+# segmentation-applications
+Set of codes related to evaluation of Senai segmentation tasks
 
 ## Source structure
 
