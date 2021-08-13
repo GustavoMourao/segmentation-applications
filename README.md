@@ -1,5 +1,5 @@
 # segmentation-applications
-Set of codes related to evaluation of Senai segmentation tasks
+Set of codes related with evaluation of image segmentation tasks
 
 ## Source structure
 ```
